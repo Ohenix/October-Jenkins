@@ -26,12 +26,6 @@ pipeline {
                 sh 'terraform init'
             }
         }
-        stage('Terraform Plan') {
-            steps {
-                // Generate and show Terraform execution plan
-                sh 'terraform plan -out=tfplan'
-            }
-        }
         stage ("terraform Action") {
             steps {
                 echo "Terraform action is --> ${action}"
